@@ -10,17 +10,21 @@ function displayAnimalGif() {
 		method: "GET"
 	}).done(function(response) {
 		console.log(response.data)
+
 		// save results as a variable
 		var results = response.data;
 
-		for (var i = 0; results.length; i++) {
-		// create a div that holds the GIFs
+		for (var i = 0; i < 10; i++) {
+
+			// create a div that holds the GIFs
 			var animalGifDiv = $("<div class='animalgifs'>");
 			var showAnimal = $("<img>");
+			var gifRating = $("<p>").html("<strong>Rating:</strong>" + results[i].rating);
 
-			// retrieve the gif still
+				// retrieve the gif still
 				showAnimal.attr("data-still", results[i].images.fixed_height_still.url);
-			// retrieve animated gif
+
+				// retrieve animated gif
 				showAnimal.attr("data-animate", results[i].images.fixed_height.url);
 
 			animalGifDiv.append(showAnimal);
@@ -39,13 +43,20 @@ $("#animals-view").on("click", "showAnimal", function() {
 	var animateURL = $(this).attr("data-animate");
 	var currentImage = $(this).attr("src");
 
-	if(currentImage === stillURL) {
+	if(currentImage == stillURL) {
 		$(this).attr("src", animateURL);
 	} else {
 		$(this).attr("src", stillURL);
 	}
 
 });
+
+// clear button
+$("#clearBtn").on("click", function() {
+	$("#animals-view").empty();
+
+});
+
 
 // function for displaying animal gifs
 function renderButtons() {

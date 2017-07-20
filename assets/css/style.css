@@ -1,12 +1,33 @@
+body {
+	background: #272b30;
+}
 .navbar {
 	margin-bottom: 20px;
+	border: 1px solid #272b30;
+	background: #272b30;
 }
 #header {
+	font-family: 'Sacramento', cursive;
+	font-size: 50px;
 	margin-bottom: 20px;
+	color: #c8c8c8;
 }
 
 #animal-form {
-	margin-top: 20px;
+	margin-top: 30px;
+}
+
+#animal-input {
+	border: none;
+	font-family: 'Spinnaker', sans-serif;
+}
+
+#add-animal {
+	background: #2A7F7B;
+	border: none;
+	color: white;
+	font-family: 'Spinnaker', sans-serif;
+	outline: none;
 }
 
 #buttons-view {
@@ -20,4 +41,33 @@
 	border: none;
 	padding: 10px 40px;
 	border-radius: 10px;
+	font-family: 'Spinnaker', sans-serif;
 }
+
+.animalBtn:focus {
+	outline: none;
+}
+
+#clearBtn {
+	border-radius: 10px;
+	padding: 5px 10px;
+	background: red;
+	color: white;
+	border: none;
+	font-family: 'Spinnaker', sans-serif;
+	margin-bottom: 15px;
+}
+
+#clearBtn:focus {
+	outline: none;
+}
+
+.animalgifs {
+	display: inline-block;
+	margin: 10px;
+}
+
+/*.animalgifs:hover {
+	padding: 5px;
+	border: 2px solid black;
+}*/
