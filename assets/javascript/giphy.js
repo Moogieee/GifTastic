@@ -1,4 +1,4 @@
-var animals = ["dog", "cat", "quokka", "sloth", "goat", "kangaroo", "squirrel", "otter", "hedgehog", "hamster"]
+var animals = ["dog", "cat", "quokka", "sloth", "goat", "kangaroo", "squirrel", "hedgehog", "hamster", "otter", "giraffe", "baby elephant", "duck", "turtle"]
 
 function displayAnimalGif() {
 	var animal = $(this).attr("data-name");
@@ -59,7 +59,7 @@ function renderButtons() {
 		// generate a button for each animal in the array
 		var animalButton = $("<button>");
 		// add a class to the button
-		animalButton.addClass("animal");
+		animalButton.addClass("animalBtn");
 		// add a data-attribute
 		animalButton.attr("data-name", animals[i]);
 		// put button text
@@ -84,7 +84,7 @@ function renderButtons() {
 	});
 
 	// add click event to all elements with a class of "animal"
-	$(document).on("click", ".animal", displayAnimalGif);
+	$(document).on("click", ".animalBtn", displayAnimalGif);
 
 	// call the renderButtons function to display the initial buttons
 	renderButtons();
