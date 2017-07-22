@@ -7,26 +7,26 @@ body {
 	background: #272b30;
 }
 #header {
-	font-family: 'Sacramento', cursive;
+	font-family: 'Orbitron', sans-serif;
 	font-size: 50px;
 	margin-bottom: 20px;
 	color: #c8c8c8;
 }
 
-#animal-form {
+#show-form {
 	margin-top: 30px;
 }
 
-#animal-input {
+#show-input {
 	border: none;
-	font-family: 'Spinnaker', sans-serif;
+	font-family: 'Droid Serif', serif;
 }
 
-#add-animal {
+#add-scifishow {
 	background: #2A7F7B;
 	border: none;
 	color: white;
-	font-family: 'Spinnaker', sans-serif;
+	font-family: 'Droid Serif', serif;
 	outline: none;
 }
 
@@ -34,17 +34,17 @@ body {
 	margin-bottom: 20px;
 }
 
-.animalBtn {
+.scifiBtn {
 	margin-top: 5px;
 	margin-right: 20px;
 	margin-bottom: 5px;
 	border: none;
 	padding: 10px 40px;
 	border-radius: 10px;
-	font-family: 'Spinnaker', sans-serif;
+	font-family: 'Droid Serif', serif;
 }
 
-.animalBtn:focus {
+.scifiBtn:focus {
 	outline: none;
 }
 
@@ -54,7 +54,7 @@ body {
 	background: red;
 	color: white;
 	border: none;
-	font-family: 'Spinnaker', sans-serif;
+	font-family: 'Droid Serif', serif;
 	margin-bottom: 15px;
 }
 
@@ -62,12 +62,13 @@ body {
 	outline: none;
 }
 
-.animalgifs {
+.scifiGifs {
 	display: inline-block;
 	margin: 10px;
 }
 
-/*.animalgifs:hover {
-	padding: 5px;
-	border: 2px solid black;
-}*/
+p {
+	color: white;
+	font-family: 'Droid Serif', serif;
+	margin-top: 10px;
+}
