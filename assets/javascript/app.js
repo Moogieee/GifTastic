@@ -38,11 +38,11 @@ function displayScifiGif() {
 // animate the gif on click
 $(".scifiImage").on("click", function() {
 	var state = $(this).attr("data-state");
-	var animate = $(this).attr("data-animate");
+	var animated = $(this).attr("data-animate");
 	var still = $(this).attr("data-still");
 
 	if(state === "still") {
-		$(this).attr("src", animate);
+		$(this).attr("src", animated);
 		$(this).attr("data-state", "animate");
 	} else {
 		$(this).attr("src", still);

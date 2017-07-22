@@ -42,17 +42,24 @@ body {
 	padding: 10px 40px;
 	border-radius: 10px;
 	font-family: 'Droid Serif', serif;
+	background: rgba(0,0,0,0.3);
+	color: white;
 }
 
 .scifiBtn:focus {
 	outline: none;
 }
 
+.scifiBtn:hover {
+	background: white;
+	color: red;
+}
+
 #clearBtn {
 	border-radius: 10px;
 	padding: 5px 10px;
-	background: red;
-	color: white;
+	background: white;
+	color: red;
 	border: none;
 	font-family: 'Droid Serif', serif;
 	margin-bottom: 15px;
@@ -62,6 +69,10 @@ body {
 	outline: none;
 }
 
+#clearBtn:hover {
+	color: white;
+	background: red;
+}
 .scifiGifs {
 	display: inline-block;
 	margin: 10px;
