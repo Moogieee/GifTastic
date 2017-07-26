@@ -26,7 +26,7 @@ function displayGif() {
                showGif.attr("data-still", results[i].images.fixed_height_still.url);
                showGif.attr("data-animate", results[i].images.fixed_height.url);
                showGif.attr("data-state", "still");
-               showGif.attr("gifImage", "true");
+               showGif.addClass("gifImage");
                console.log(showGif);
 			showDiv.append(showGif).append(p);
 			$("#gif-view").prepend(showDiv);
@@ -35,8 +35,9 @@ function displayGif() {
 	});
 }
 
+
 // animate the gif on click
-$("gifImage").on("click", function() {
+$(document).on("click", ".gifImage", function() {
 	var state = $(this).attr("data-state");
 	var animated = $(this).attr("data-animate");
 	var still = $(this).attr("data-still");
