@@ -1,6 +1,6 @@
 var shows = ["Firefly", "Doctor Who", "Stargate Atlantis", "Star Trek", "Stranger Things", "Black Mirror", "Orphan Black", "X-Files"];
 
-function displayScifiGif() {
+function displayGif() {
 	var scifi = $(this).attr("data-name");
 	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + scifi + " &api_key=dc6zaTOxFJmzC";
 
@@ -17,7 +17,7 @@ function displayScifiGif() {
 		for (var i = 0; i < 10; i++) {
 
 			// create a div that holds the GIFs
-			var scifiGifDiv = $("<div class='scifiGifs'>");
+			var showDiv = $("<div class='scifiGifs'>");
 			var showGif = $("<img>");
 			var rating = results[i].rating;
 			var p = $("<p>").html("<strong>Rating: </strong>" + rating.toUpperCase());
@@ -25,44 +25,47 @@ function displayScifiGif() {
                showGif.attr("src", results[i].images.fixed_height_still.url);
                showGif.attr("data-still", results[i].images.fixed_height_still.url);
                showGif.attr("data-animate", results[i].images.fixed_height.url);
-               showGif.attr("data-state", 'still');
-               showGif.addClass("scifiImage");
-
-			scifiGifDiv.append(showGif).append(p);
-			$("#scifiGif-view").prepend(scifiGifDiv);
+               showGif.attr("data-state", "still");
+               showGif.attr("gifImage", "true");
+               console.log(showGif);
+			showDiv.append(showGif).append(p);
+			$("#gif-view").prepend(showDiv);
 		}
 
 	});
 }
 
 // animate the gif on click
-$(".scifiImage").on("click", function() {
+$("gifImage").on("click", function() {
 	var state = $(this).attr("data-state");
 	var animated = $(this).attr("data-animate");
 	var still = $(this).attr("data-still");
+	console.log("This is Working!!");
 
 	if(state === "still") {
 		$(this).attr("src", animated);
 		$(this).attr("data-state", "animate");
+		console.log($(this).attr("data-state", "animate"));
 	} else {
 		$(this).attr("src", still);
 		$(this).attr("data-state", "still");
+		console.log($(this).attr("data-state", "still"));
 	}
 });
 
 // clear button
 $("#clearBtn").on("click", function() {
-	$("#scifiGif-view").empty();
+	$("#gif-view").empty();
 });
 
 
-// function for displaying scifi list of buttons
+// function for displaying show name list of buttons
 function renderButtons() {
 
-	// delete the scifi shows prior to adding new scifi shows
+	// delete the shows prior to adding new shows
 	$("#buttons-view").empty();
 
-	// loop through the array of scifi shows
+	// loop through the array of shows
 	for (var i = 0; i < shows.length; i++) {
 
 		// generate a button for each show in the array
@@ -79,11 +82,11 @@ function renderButtons() {
 }
 
 // function that handles events when the add gif button is clicked 
-	$("#add-scifishow").on("click", function(event) {
+	$("#add-show").on("click", function(event) {
 		event.preventDefault();
 
 		// grab input from the textbox 
-		var scifi = $("#show-input").val().trim();
+		scifi = $("#show-input").val().trim();
 
 		// the scifi show from the textbox is added to array
 		shows.push(scifi);
@@ -93,7 +96,7 @@ function renderButtons() {
 	});
 
 	// add click event to all elements with a class of "scifi"
-	$(document).on("click", ".scifiBtn", displayScifiGif);
+	$(document).on("click", ".scifiBtn", displayGif);
 
 	// call the renderButtons function to display the initial buttons
 	renderButtons();
